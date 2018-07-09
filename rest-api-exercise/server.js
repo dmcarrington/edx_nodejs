@@ -5,9 +5,9 @@ const bodyParser = require('body-parser')
 const routes = require('./routes')
 
 let app = express()
-app.use(bodyParser.json())
 app.use(logger('dev'))
 app.use(errorhandler())
+app.use(bodyParser.json())
 
 app.get('/posts', routes.posts.getPosts)
 app.post('/posts', routes.posts.addPost)
